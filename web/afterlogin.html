@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VPT</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Satisfy&family=Staatliches&display=swap" rel="stylesheet">
+        <style>
+        /* CSS Reset */
+        body {
+            font-family: 'Baloo Bhai', cursive;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: black;
+        }
+        .header{
+            border: 2px black solid;
+            border-radius: 7px;
+            height: 68px;
+            width: 100%;
+            background: linear-gradient(to bottom, black 0%, white 100%);
+        }
+        .left {
+            display: inline-block;
+            position: absolute;
+            left: 30px;
+            top: 10px;
+        }
+
+        .left img {
+            width: 60px;
+        }
+
+        .left div {
+            line-height: 19px;
+            font-size: 26px;
+            text-align: center;
+        }
+
+        .mid {
+            display: inline;
+            width: 40%;
+            margin: auto 50px 5px 100px;
+        }
+
+        .right {
+            position: absolute;
+            right: 17px;
+            top: 18px;
+            display: inline-block;
+        }
+
+        .navbar {
+            display: inline-block;
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 22px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 0px 21px;
+            transition: all 0.9s ease 0s;
+        }
+
+        .navbar li a:hover, .navbar li a.active {
+            text-decoration: underline;
+            color: black;
+            background: white;
+            border-radius: 15px;
+        }
+        .btn {
+            font-family: 'Baloo Bhai', cursive;
+            margin: 0px 9px;
+            background-color: black;
+            color: white;
+            padding: 4px 14px;
+            border: 2px solid grey;
+            border-radius: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: #333333;
+        }
+        .right .btn{
+            height: 35px;
+            width: 90px;
+            font-size: 15px;
+        }
+        .right a{
+            text-decoration: none;
+            color: white;
+        }
+        .dropbtn {
+            font-family: 'Baloo Bhai',cursive;
+            font-size: 25px;
+            margin-left: 12px;
+            color: black;
+            text-decoration: none;
+            padding: 0px 15px;
+            height: 40px;
+            width: 120px;
+            border-radius: 12px;
+            transition: all 0.9s ease 0s;
+        }
+
+        .dropdown {
+            position: relative;
+            top: 1px;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            border-radius: 12px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            border-radius: 12px;
+            border: 1px black solid;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: black;
+            color: white;
+        }
+        .container {
+            width: 88%;
+            color: black;
+            padding-left: 90px;
+            font-family: algerian;
+            font-size: 25px;
+            border: 2px black solid;
+            border-radius: 10px;
+            background: white;
+        }
+        h1{
+            color: white;
+            font-size: 50px;
+            font-family: ALGERIAN;
+            letter-spacing: 3px;
+            width: 100%;
+            text-align: center;
+        }
+        .container1{
+            width: 80%;
+            height:500px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            position: relative;
+        }
+        .img-ctr{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            position: relative;
+            
+            transform-origin: center;
+            transform: perspective(800px) rotateY(25deg);
+            transition: 0.5s;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        
+        .imgx{
+            width: 200px;
+            height: 300px;
+            position: relative;
+            -webkit-box-reflect: below 2px linear-gradient(transparent,transparent,#0015);
+            filter: grayscale(60%);
+            border-radius: 15px;
+        }
+        h2{
+            position: absolute;
+            color: black;
+            z-index: 1;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Satisfy',cursive;
+            letter-spacing: 2px;
+            padding-left: 40px; 
+            rotate: 355deg;
+            tranform: skew(355deg,355deg);
+            top: 139;
+            transition: 0.5s;
+            transition-delay: 0.35s;
+            opacity: 0;
+        }
+        .img-ctr:hover{
+            transform: perspective(800px) rotateY(0deg);
+        }
+        .img-ctr:hover img{
+            filter: grayscale(0%);
+            opacity: 0.85;
+        }
+        .img-ctr:hover h2{
+            top: 140;
+            opacity: 1;
+        }
+        
+        </style>
+        <script>(function(w, d) { w.CollectId = "64400d3965918a6a20802481"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+    </head>
+<body>
+    <header class="header">
+        <div class="left">
+            <img id="nobg" src="Images/hlogo.png" alt="">
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="afterlogin.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li class="dropdown"><button class="dropbtn">Others</button>
+                    <div class="dropdown-content">
+                      <a href="order.html">Order Meds</a>
+                      <a href="room.html">Rooms</a>
+                      <a href="appt.html">Appointments</a></li> 
+            
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn">Call Us</button>
+            <button class="btn"><a href="https://mail.google.com/mail/u/0/#inbox">Email Us</a></button>
+        </div>
+    </header>
+    <h1>...OUR FEATURES...</h1>
+    <div class="container1">
+        <div class="img-ctr">
+            <h2>Multi Specialty Treatment</h2>
+            <img class="imgx" src="Images/hmulti1.jpg">
+        </div>
+        <div class="img-ctr">
+            <h2>High Quality Medicines</h2>
+            <img class="imgx" src="Images/hmeds.png">
+        </div>
+        <div class="img-ctr">
+            <h2>Hygienic Rooms</h2>
+            <img class="imgx" src="Images/hrooms.png">
+        </div>
+        <div class="img-ctr">
+            <h2>24x7 Customer Service</h2>
+            <img class="imgx" src="Images/hcust.png">
+        </div>
+    </div>
+    <br><br>
+    <div class="container">
+            &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspAN APPLE A DAY...
+            &nbsp&nbspKEEPS DOCTOR AWAY...
+        </div>
+    <br><br>
+     <marquee direction="right" scrollamount="15" style="margin-left: 20px; margin-right: 20px;">
+        <img src="https://www.animatedimages.org/data/media/36/animated-doctor-image-0009.gif" border="0" alt="animated-doctor-image-0009" width="200"/>&emsp;&emsp;&emsp;
+        <img src="https://www.animatedimages.org/data/media/169/animated-running-image-0008.gif" border="0" alt="animated-running-image-0008" width="180" />&emsp;&emsp;&emsp;
+        <img src="https://www.animatedimages.org/data/media/329/animated-apple-image-0006.gif" border="0" alt="animated-apple-image-0006" width="90" />
+    </marquee>
+    </body>
+</html>
+
